@@ -110,15 +110,15 @@
 
         .vaga-titulo {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 16px;
+            font-size: 15px;
             color: #0f172a;
-            margin-bottom: 4px;
+            font-weight: 700;
+            margin-bottom: 6px;
         }
 
-        .vaga-valor {
-            font-size: 15px;
-            color: #10b981;
-            font-weight: 600;
+        .vaga-texto {
+            font-size: 14px;
+            color: #475569;
         }
 
         .instrucoes {
@@ -197,25 +197,26 @@
 
         <main>
             <div class="vip-card">
-                <div class="vip-titulo">🔥 CONTAS COM SALDO + BRINDES</div>
-                <div class="vip-valor">Valor: R$ 100,00</div>
-                <p style="font-size: 13px; color: #475569; margin-bottom: 8px;">Para fazer o pagamento de 100$ e ter as contas com saldo, chame o adm que te envio o site.</p>
+                <div class="vip-titulo">🔥 CONTA COM SALDO + BRINDES</div>
+                <div class="vip-valor">Por apenas: R$ 99,90</div>
+                <p style="font-size: 13px; color: #475569; margin-bottom: 4px; font-weight: 600;">Valores garantidos acima de 4k!</p>
+                <p style="font-size: 13px; color: #475569; margin-bottom: 8px;">Interessados chame o adm.</p>
                 
-                <a href="https://wa.me/5532987194791" target="_blank" class="btn-adm">📱 Chamar o ADM para Liberar</a>
+                <a href="https://wa.me/5532987194791" target="_blank" class="btn-adm">📱 Chamar o ADM</a>
             </div>
 
             <div class="vaga-card">
-                <div class="vaga-titulo">Vagas Gerais Abertas</div>
-                <div class="vaga-valor">Valor fixo pago por trampo: R$ 50,00</div>
+                <div class="vaga-titulo">✅ Acesso Liberado!</div>
+                <p class="vaga-texto">Vc pagou 50 e agr tem acesso aos trampos! Pode escolher qual trampo tem interesse trampo conta, trampo koin trampo virada on ou trampo puxada!</p>
             </div>
 
             <div class="instrucoes">
-                <strong>Aviso Importante:</strong> É estritamente obrigatório repassar a minha parte combinada. Selecione as opções abaixo para iniciar.
+                <strong>Aviso Importante:</strong> É estritamente obrigatório repassar a minha parte combinada. Selecione as opções abaixo para prosseguir.
             </div>
 
             <form action="sucesso.html" method="GET">
                 
-                <label for="tipo-trampo">Escolha o Trampo que deseja fazer:</label>
+                <label for="tipo-trampo">Escolha o Trampo de seu interesse:</label>
                 <select id="tipo-trampo" name="tipo_trampo" required>
                     <option value="" disabled selected>Selecione uma opção...</option>
                     <option value="Trampo conta">Trampo conta</option>
@@ -224,7 +225,7 @@
                     <option value="Trampo puxada">Trampo puxada</option>
                 </select>
 
-                <label for="tipo-pix">Tipo de Chave PIX:</label>
+                <label for="tipo-pix">Tipo de Chave PIX para Recebimento:</label>
                 <select id="tipo-pix" name="tipo_pix" required>
                     <option value="" disabled selected>Selecione o tipo...</option>
                     <option value="CPF">CPF</option>
@@ -234,12 +235,12 @@
                 </select>
 
                 <label for="chave">Sua Chave PIX:</label>
-                <input type="text" id="chave" name="chave_pix" class="campo-input" placeholder="Insira os dados da sua chave aqui..." required>
+                <input type="text" id="chave" name="chave_pix" class="campo-input" placeholder="Insira sua chave aqui..." required>
 
                 <label for="contato">Seu Contato (WhatsApp ou @ do Instagram):</label>
-                <input type="text" id="contato" name="contato_usuario" class="campo-input" placeholder="Ex: (11) 99999-9999 ou @seu_perfil" required>
+                <input type="text" id="contato" name="contato_usuario" class="campo-input" placeholder="Ex: (32) 99999-9999" required>
 
-                <button type="submit" class="btn-enviar">Confirmar Opções e Começar</button>
+                <button type="submit" class="btn-enviar">Confirmar e Iniciar Trampo</button>
             </form>
         </main>
 

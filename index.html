@@ -78,6 +78,25 @@
             margin-bottom: 10px;
         }
 
+        /* Botão específico para o Pagamento */
+        .btn-pagamento {
+            display: inline-block;
+            background: #10b981;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 10px;
+            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+            transition: background 0.2s;
+        }
+
+        .btn-pagamento:active {
+            background: #059669;
+        }
+
         .vaga-card {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
@@ -119,7 +138,6 @@
             margin-top: 15px;
         }
 
-        /* Campos de Seleção e Texto */
         .campo-input, select {
             width: 100%;
             padding: 12px;
@@ -180,6 +198,8 @@
                 <div class="vip-titulo">🔥 ACESSO VIP CONTAS + BRINDES</div>
                 <div class="vip-valor">Taxa Única: R$ 100,00</div>
                 <p style="font-size: 13px; color: #475569;">Faça o pagamento de R$ 100,00 para liberar o seu acesso imediato e resgatar suas contas com brindes inclusos.</p>
+                
+                <a href="#" target="_blank" class="btn-pagamento">👉 Pagar Taxa VIP (R$ 100,00)</a>
             </div>
 
             <div class="vaga-card">
@@ -228,4 +248,3 @@
 
 </body>
 </html>
-

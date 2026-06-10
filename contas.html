@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contas Disponíveis - Trampos On</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f6f9;
+            color: #333333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 24px;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* Card de cada Conta Disponível */
+        .conta-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .conta-status {
+            display: inline-block;
+            background: #10b981;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Estilo para ajustar as imagens dos prints */
+        .conta-imagem {
+            width: 100%;
+            max-height: 350px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+        }
+
+        .conta-info {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 16px;
+            color: #1e293b;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .conta-preco {
+            font-size: 18px;
+            color: #00adb5;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .btn-comprar {
+            display: block;
+            background: #25d366;
+            color: #ffffff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.2);
+            transition: background 0.2s;
+        }
+
+        .btn-comprar:active {
+            background: #128c7e;
+        }
+
+        .btn-voltar {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Contas Disponíveis</h1>
+            <p class="subtitle">Saldos Garantidos acima de 4K por R$ 99,90</p>
+        </header>
+
+        <main>
+
+            <div class="conta-card">
+                <span class="conta-status">Disponível</span>
+                <img src="conta1.png" alt="Print do Saldo 1" class="conta-imagem">
+                <div class="conta-info">Conta Ouro - Saldo Garantido +4K</div>
+                <div class="conta-preco">Valor: R$ 99,90</div>
+                <a href="https://wa.me/5532987194791?text=Olá ADM! Gostei da Conta 1 com saldo e quero fazer o pagamento de 99,90 para liberar." target="_blank" class="btn-comprar">📱 Pagar R$ 99,90 e Levar</a>
+            </div>
+
+            <div class="conta-card">
+                <span class="conta-status">Disponível</span>
+                <img src="conta2.png" alt="Print do Saldo 2" class="conta-imagem">
+                <div class="conta-info">Conta Premium - Saldo Garantido +4K</div>
+                <div class="conta-preco">Valor: R$ 99,90</div>
+                <a href="https://wa.me/5532987194791?text=Olá ADM! Gostei da Conta 2 com saldo e quero fazer o pagamento de 99,90 para liberar." target="_blank" class="btn-comprar">📱 Pagar R$ 99,90 e Levar</a>
+            </div>
+
+            <a href="index.html" class="btn-voltar">← Voltar para o Painel</a>
+        </main>
+
+        <footer>
+            &copy; 2026 Trampos On. Todos os direitos reservados.
+        </footer>
+    </div>
+
+</body>
+</html>

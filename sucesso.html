@@ -108,7 +108,6 @@
             box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.1);
         }
 
-        /* Botão de Envio */
         .btn-enviar {
             display: block;
             width: 100%;
@@ -131,6 +130,41 @@
             background: #1fbe58;
         }
 
+        /* Tela de Aguarde (Escondida no início) */
+        #telaAguarde {
+            display: none;
+            text-align: center;
+            padding: 30px 10px;
+        }
+
+        .loader-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            animation: spin 2s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            background-color: #e2e8f0;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 8px;
+            background-color: #00adb5;
+            border-radius: 10px;
+            transition: width 0.4s ease;
+        }
+
         .btn-voltar {
             display: block;
             text-align: center;
@@ -139,10 +173,6 @@
             color: #64748b;
             text-decoration: none;
             font-weight: 500;
-        }
-
-        .btn-voltar:hover {
-            color: #334155;
         }
 
         footer {
@@ -157,50 +187,62 @@
 
     <div class="container">
         
-        <div class="banner-sucesso">
-            <h2>✅ Acesso Liberado!</h2>
-            <p>Você pagou 50 e agora tem acesso aos trampos! Pode escolher qual trampo tem interesse: trampo conta, trampo koin, trampo virada on ou trampo puxada!</p>
+        <div id="conteudoForm">
+            <div class="banner-sucesso">
+                <h2>✅ Acesso Liberado!</h2>
+                <p>Você pagou 50 e agora tem acesso aos trampos! Pode escolher qual trampo tem interesse: trampo conta, trampo koin, trampo virada on ou trampo puxada!</p>
+            </div>
+
+            <div class="banner-aviso">
+                <strong>Aviso Importante:</strong> É estritamente obrigatório repassar a minha parte combinada. Selecione as opções abaixo para prosseguir.
+            </div>
+
+            <form id="formTrampo">
+                <div class="form-group">
+                    <label for="trampo">Escolha o Trampo de seu interesse:</label>
+                    <select id="trampo" required>
+                        <option value="Trampo conta">Trampo conta</option>
+                        <option value="Trampo koin">Trampo koin</option>
+                        <option value="Trampo virada on">Trampo virada on</option>
+                        <option value="Trampo puxada">Trampo puxada</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo_pix">Tipo de Chave PIX para Recebimento:</label>
+                    <select id="tipo_pix" required>
+                        <option value="Chave Aleatória">Chave Aleatória</option>
+                        <option value="CPF / CNPJ">CPF / CNPJ</option>
+                        <option value="Celular">Celular</option>
+                        <option value="E-mail">E-mail</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="chave_pix">Sua Chave PIX:</label>
+                    <input type="text" id="chave_pix" placeholder="Insira sua chave aqui..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contato">Seu Contato (WhatsApp ou @ do Instagram):</label>
+                    <input type="text" id="contato" placeholder="Ex: (32) 99999-9999 ou @seuuser" required>
+                </div>
+
+                <button type="button" onclick="processarSemWhatsApp()" class="btn-enviar">📱 Confirmar e Iniciar Trampo</button>
+            </form>
         </div>
 
-        <div class="banner-aviso">
-            <strong>Aviso Importante:</strong> É estritamente obrigatório repassar a minha parte combinada. Selecione as opções abaixo para prosseguir.
-        </div>
-
-        <form action="https://wa.me/5532987194791" method="GET" target="_blank" id="formTrampo">
+        <div id="telaAguarde">
+            <span class="loader-icon">🔄</span>
+            <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; color: #1e293b; margin-bottom: 10px;">Solicitação Enviada!</h2>
+            <p style="font-size: 14px; color: #64748b;">Estamos registrando seus dados e vinculando ao seu pagamento. Por favor, aguarde.</p>
             
-            <div class="form-group">
-                <label for="trampo">Escolha o Trampo de seu interesse:</label>
-                <select id="trampo" name="trampo" required>
-                    <option value="Trampo conta">Trampo conta</option>
-                    <option value="Trampo koin">Trampo koin</option>
-                    <option value="Trampo virada on">Trampo virada on</option>
-                    <option value="Trampo puxada">Trampo puxada</option>
-                </select>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="myBar"></div>
             </div>
-
-            <div class="form-group">
-                <label for="tipo_pix">Tipo de Chave PIX para Recebimento:</label>
-                <select id="tipo_pix" name="tipo_pix" required>
-                    <option value="Chave Aleatória">Chave Aleatória</option>
-                    <option value="CPF / CNPJ">CPF / CNPJ</option>
-                    <option value="Celular">Celular</option>
-                    <option value="E-mail">E-mail</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="chave_pix">Sua Chave PIX:</label>
-                <input type="text" id="chave_pix" name="chave_pix" placeholder="Insira sua chave aqui..." required>
-            </div>
-
-            <div class="form-group">
-                <label for="contato">Seu Contato (WhatsApp ou @ do Instagram):</label>
-                <input type="text" id="contato" name="contato" placeholder="Ex: (32) 99999-9999 ou @seuuser" required>
-            </div>
-
-            <button type="button" onclick="enviarParaWhatsApp()" class="btn-enviar">📱 Confirmar e Iniciar Trampo</button>
-
-        </form>
+            
+            <p style="font-size: 12px; color: #00adb5; font-weight: 600;">Status: Sincronizando com o sistema...</p>
+        </div>
 
         <a href="index.html" class="btn-voltar">← Voltar para o Painel</a>
 
@@ -210,31 +252,35 @@
     </div>
 
     <script>
-        function enviarParaWhatsApp() {
-            const trampo = document.getElementById('trampo').value;
-            const tipoPix = document.getElementById('tipo_pix').value;
+        function processarSemWhatsApp() {
             const chavePix = document.getElementById('chave_pix').value;
             const contato = document.getElementById('contato').value;
 
-            // Verifica se os campos obrigatórios estão preenchidos
+            // Bloqueia se os campos estiverem vazios
             if(!chavePix || !contato) {
                 alert('Por favor, preencha todos os campos antes de continuar.');
                 return;
             }
 
-            // Monta o texto bem organizado para chegar no seu WhatsApp
-            const texto = `Olá ADM! Já fiz o pagamento e preenchi meus dados:\n\n` +
-                          `• *Trampo Escolhido:* ${trampo}\n` +
-                          `• *Tipo de Chave:* ${tipoPix}\n` +
-                          `• *Minha Chave PIX:* ${chavePix}\n` +
-                          `• *Meu Contato:* ${contato}`;
+            // 1. Esconde a parte do formulário imediatamente
+            document.getElementById('conteudoForm').style.display = 'none';
+            
+            // 2. Torna visível a tela de carregamento/aguarde
+            document.getElementById('telaAguarde').style.display = 'block';
 
-            // Codifica o texto para link do WhatsApp
-            const textoCodificado = encodeURIComponent(texto);
-            const linkWhatsApp = `https://wa.me/5532987194791?text=${textoCodificado}`;
-
-            // Abre o WhatsApp
-            window.open(linkWhatsApp, '_blank');
+            // 3. Inicia o preenchimento automático da barra azul
+            let elem = document.getElementById("myBar");
+            let width = 0;
+            let id = setInterval(frame, 45); // Define a velocidade que a barra carrega
+            
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    elem.style.width = width + '%';
+                }
+            }
         }
     </script>
 

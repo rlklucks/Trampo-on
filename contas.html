@@ -3,194 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contas Disponíveis - Trampos On</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
-
+    <title>Contas Disponíveis | Trampos On</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f4f6f9;
-            color: #333333;
-            line-height: 1.6;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #f0f2f5;
-            padding-bottom: 15px;
-        }
-
-        h1 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 24px;
-            color: #1e293b;
-            margin-bottom: 6px;
-        }
-
-        .subtitle {
-            font-size: 14px;
-            color: #64748b;
-            font-weight: 500;
-        }
-
-        /* Card de cada Conta Disponível (Sem Imagem) */
-        .conta-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-left: 5px solid #00adb5;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            text-align: left;
-            position: relative;
-        }
-
-        .conta-status {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #10b981;
-            color: #ffffff;
-            font-size: 10px;
-            font-weight: 700;
-            padding: 3px 8px;
-            border-radius: 20px;
-            text-transform: uppercase;
-        }
-
-        .conta-info {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 18px;
-            color: #1e293b;
-            font-weight: 700;
-            margin-bottom: 4px;
-            margin-top: 5px;
-        }
-
-        .conta-detalhes {
-            font-size: 14px;
-            color: #64748b;
-            margin-bottom: 15px;
-        }
-
-        .conta-preco {
-            font-size: 16px;
-            color: #1e293b;
-            font-weight: 600;
-            margin-bottom: 15px;
-            background: #e6fffa;
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 6px;
-            border: 1px solid #b2f5ea;
-        }
-
-        .conta-preco strong {
-            color: #00adb5;
-            font-size: 18px;
-            font-weight: 800;
-        }
-
-        .btn-comprar {
-            display: block;
-            background: #25d366;
-            color: #ffffff;
-            text-align: center;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 14px;
-            text-decoration: none;
-            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.2);
-            transition: background 0.2s;
-        }
-
-        .btn-comprar:active {
-            background: #128c7e;
-        }
-
-        .btn-voltar {
-            display: block;
-            text-align: center;
-            margin-top: 25px;
-            font-size: 14px;
-            color: #64748b;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .btn-voltar:hover {
-            color: #334155;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 12px;
-            color: #94a3b8;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; padding: 20px; }
+        .container { max-width: 450px; margin: 0 auto; }
+        
+        header { text-align: center; margin-bottom: 25px; }
+        h1 { font-family: 'Plus Jakarta Sans'; font-size: 26px; margin-bottom: 10px; }
+        
+        /* Texto de Autoridade */
+        .authority-text { background: #ffffff; padding: 20px; border-radius: 16px; border: 1px solid #e2e8f0; margin-bottom: 25px; line-height: 1.6; }
+        .authority-text h2 { font-family: 'Plus Jakarta Sans'; font-size: 16px; margin-bottom: 10px; color: #00adb5; }
+        .authority-text p { font-size: 13px; color: #64748b; margin-bottom: 10px; }
+        
+        /* Lista de Trampos */
+        .trampo-card { background: #ffffff; padding: 16px; border-radius: 12px; margin-bottom: 12px; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; }
+        .trampo-info strong { display: block; font-size: 15px; }
+        .trampo-info span { font-size: 12px; color: #64748b; }
+        .btn-adquirir { background: #1e293b; color: #ffffff; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 12px; font-weight: 600; }
+        
+        .btn-voltar { display: block; text-align: center; margin-top: 25px; color: #64748b; font-size: 14px; text-decoration: none; }
     </style>
 </head>
 <body>
-
     <div class="container">
         <header>
             <h1>Contas Disponíveis</h1>
-            <p class="subtitle">Saldos Garantidos acima de 4590,89 por R$ l99,90</p>
         </header>
 
-        <main>
-            <div class="conta-card">
-                <span class="conta-status">Disponível</span>
-                <div class="conta-info">Conta Ouro #01</div>
-                <p class="conta-detalhes">Acesso imediato • Saldo verificado em carteira acima de R$ 4.000,00 • Brindes inclusos no pacote.</p>
-                <div class="conta-preco">Taxa de Liberação: <strong>R$ 199,90</strong></div>
-                <a href="https://wa.me/5532987194791?text=Olá ADM! Gosteida Conta Ouro 01 com saldo e quero fazer o pagamento de 199,90 para liberar." target="_blank" class="btn-comprar">📱 Pagar R$ 199,90 e Adquirir</a>
-            </div>
-            
-            <div class="conta-card">
-                <span class="conta-status">Disponível</span>
-                <div class="conta-info">Conta Premium #02</div>
-                <p class="conta-detalhes">Acesso imediato • Saldo verificado em carteira acima de R$4589,90 Suporte pós-entrega incluso.</p>
-                <div class="conta-preco">Taxa de Liberação: <strong>R$ 249,90</strong></div>
-                <a href="https://wa.me/5532987194791?text=Olá ADM! Gostei da Conta Premium 02 com saldo e quero fazer o pagamento de 249,90 para liberar." target="_blank" class="btn-comprar">📱 Pagar R$249,90 e Adquirir</a>
-            </div>
+        <section class="authority-text">
+            <h2>Trampos On: Referência em Gerenciamento e Liberação</h2>
+            <p>A escolha do mercado para quem não abre mão de qualidade e agilidade. Nossa plataforma foi construída sob pilares de auditoria independente e proteção rigorosa de dados.</p>
+            <p>• <strong>Processo Transparente:</strong> Acompanhe em tempo real suas solicitações e liberações.</p>
+            <p>• <strong>Suporte Real:</strong> Atendimento humanizado focado em resolver qualquer imprevisto.</p>
+            <p>• <strong>Resultado:</strong> Resultados comprovados por centenas de usuários ativos todos os dias.</p>
+        </section>
 
-            <div class="conta-card">
-                <span class="conta-status">Disponível</span>
-                <div class="conta-info">Conta bronze #03</div>
-                <p class="conta-detalhes">Acesso imediato • Saldo verificado em carteira acima de R$ 700 • Brindes inclusos no pacote.</p>
-                <div class="conta-preco">Taxa de Liberação: <strong>R$ 39,90</strong></div>
-                <a href="https://wa.me/5532987194791?text=Olá ADM! Gosteida Conta bronze 03 com saldo e quero fazer o pagamento de 39,90 para liberar." target="_blank" class="btn-comprar">📱 Pagar R$ 39,90 e Adquirir</a>
+        <div class="trampo-card">
+            <div class="trampo-info">
+                <strong>Trampo Conta</strong>
+                <span>Liberação imediata</span>
             </div>
+            <a href="sucesso.html" class="btn-adquirir">Selecionar</a>
+        </div>
 
-            <a href="index.html" class="btn-voltar">← Voltar para o Painel</a>
-        </main>
+        <div class="trampo-card">
+            <div class="trampo-info">
+                <strong>Trampo Koin</strong>
+                <span>Alta performance</span>
+            </div>
+            <a href="sucesso.html" class="btn-adquirir">Selecionar</a>
+        </div>
 
-        <footer>
-            &copy; 2026 Trampos On. Todos os direitos reservados.
-        </footer>
+        <div class="trampo-card">
+            <div class="trampo-info">
+                <strong>Trampo Virada ON</strong>
+                <span>Ativação rápida</span>
+            </div>
+            <a href="sucesso.html" class="btn-adquirir">Selecionar</a>
+        </div>
+
+        <div class="trampo-card">
+            <div class="trampo-info">
+                <strong>Trampo Puxada</strong>
+                <span>Verificado e seguro</span>
+            </div>
+            <a href="sucesso.html" class="btn-adquirir">Selecionar</a>
+        </div>
+
+        <a href="index.html" class="btn-voltar">← Voltar para o Painel</a>
     </div>
-
 </body>
 </html>
